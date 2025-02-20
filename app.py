@@ -10,6 +10,8 @@ if __name__ == "__main__":
     try:
         x = data_ingestion=DataIngestion()
         train_data_path,test_data_path=data_ingestion.initiate_data_ingestion()
+
+        
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         logging.error(f"An error occurred: {CUSTOM_EXCEPTION}")
