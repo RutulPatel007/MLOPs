@@ -8,10 +8,17 @@ if __name__ == "__main__":
     logging.info("Application started successfully")
 
     try:
+        logging.info("Data Ingestion started")
         x = data_ingestion=DataIngestion()
         train_data_path,test_data_path=data_ingestion.initiate_data_ingestion()
+        logging.info("Data Ingestion completed")
 
-        
+
+
+
+
+
+
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         logging.error(f"An error occurred: {CUSTOM_EXCEPTION}")
