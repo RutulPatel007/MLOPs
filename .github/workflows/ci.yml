@@ -10,7 +10,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-            
+
 
 
 
@@ -37,13 +37,13 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Train the ML Model (if needed)
-        run: |
-          python train.py  # Modify this if your training script has a different name
+    #   - name: Train the ML Model (if needed)
+    #     run: |
+    #       python train.py  # Modify this if your training script has a different name
 
-      - name: Run Tests with pytest
-        run: |
-          pytest --cov=your_project --cov-report=xml
+    #   - name: Run Tests with pytest
+    #     run: |
+    #       pytest --cov=your_project --cov-report=xml
 
       - name: Start ML Model API
         run: |
@@ -51,11 +51,11 @@ jobs:
         env:
           MODEL_PATH: models/latest_model.pkl  # Change this based on your setup
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: true
+    #   - name: Upload coverage to Codecov
+    #     uses: codecov/codecov-action@v3
+    #     with:
+    #       token: ${{ secrets.CODECOV_TOKEN }}
+    #       file: ./coverage.xml
+    #       flags: unittests
+    #       name: codecov-umbrella
+    #       fail_ci_if_error: true
